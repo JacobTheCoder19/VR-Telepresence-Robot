@@ -1,6 +1,5 @@
 /* Program initialy created: 01/12/2026 3:40 pm 
    Developer: Jacob Graham 
-   Purpose: To create a cool miny robot to be my best friend. 
    Last Modified: 01/14/2026. 5:53 pm
    Last Modified(Again): 06/26/2026. 12:00 AM*/
 

@@ -1,7 +1,7 @@
 #include <WiFi.h>
 
 const char* ssid = "RobotControl";
-const char* password = "Inventor20#!";
+const char* password = "YOUR_PASSWORD";
 
 WiFiClient client;
 IPAddress serverIP(192, 168, 4, 1); // AP IP
