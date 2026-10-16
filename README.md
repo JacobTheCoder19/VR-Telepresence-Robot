@@ -1,9 +1,7 @@
 # Head-Tracking VR Telepresence Robot 🤖🥽
 
 <p align="center">
-  <img src="images/robot-front.jpg" alt="The robot's head with its LED ring eye and camera" width="45%">
-  &nbsp;
-  <img src="images/headset.jpg" alt="The head-tracking headset" width="45%">
+  
 </p>
 
 <p align="center"><i>When I turn my head, the robot turns its head. When I look through the headset, I see what the robot sees.</i></p>
