@@ -1,6 +1,5 @@
 /* Program initialy created: 01/12/2026 3:40 pm
-   Developer: Jacob Graham
-   Purpose: To create a cool miny robot to be my best friend.
+   Developer: Jacob Graham
    Last Modified: 01/12/2026.*/
 
 #ifndef LED_EYE_H
