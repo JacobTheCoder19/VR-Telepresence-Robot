@@ -1,10 +1,20 @@
 # Head-Tracking VR Telepresence Robot 🤖🥽
 
 <p align="center">
-  
+  <img src="images/robot-on.jpg" alt="The robot powered on, with its live split-screen camera view on the monitors behind it" width="75%">
 </p>
 
 <p align="center"><i>When I turn my head, the robot turns its head. When I look through the headset, I see what the robot sees.</i></p>
+
+<!-- VIDEO: on GitHub, edit this file and drag robot-demo.mp4 onto the empty line below this comment -->
+
+
+
+https://github.com/user-attachments/assets/35f59413-c37e-427c-b5a0-f181a8354839
+
+
+
+<p align="center"><i>Demo: as I turn the headset, the robot turns with it, and the monitor behind it shows the live split-screen view from the robot's eye.</i></p>
 
 <h2><em>💎 Key Features 💎</em></h2>
 <div>
@@ -56,15 +66,27 @@
         │
 ┌───────────────────┐
 │ ESP32 camera      │ ◀── sits behind the robot's eye
-│ (hosts own WiFi)  │
+│ (on home WiFi)    │
 └───────────────────┘
 ```
 
 &emsp;<b>1. The headset.</b> When the headset powers on, it sits flat on a table while the ESP32 calibrates the MPU6050 by measuring the gyro's built-in error so it can be subtracted later. It then creates its own WiFi network and waits for the robot to connect. Once connected, it reads the gyro's yaw angle and sends it to the robot 20 times per second. Pressing the recenter button saves the current direction as "straight ahead."
 
+<p align="center">
+  <img src="images/headset-closed.jpg" alt="The headset with the MPU6050 gyro on top and the ESP32 on the side" width="45%">
+  &nbsp;
+  <img src="images/headset-open.jpg" alt="The headset opened up, showing where the phone goes" width="45%">
+</p>
+
+&emsp;<b>2. The robot's ESP32.</b> This board connects to the headset's WiFi network and forwards every angle it receives to the Arduino Mega over a serial connection.
+
 &emsp;<b>3. The Arduino Mega.</b> The Mega reads each angle, smooths it to remove jitter, maps my head range of -70° to 70° onto the servo's 0° to 180°, and moves the servo that turns the robot's head. It also runs the LED ring eye and the buzzer.
 
-&emsp;<b>4. The camera.</b> An ESP32 camera board behind the robot's eye hosts its own WiFi network and video stream. I connect my phone to it, open the page, and place the phone in the VR viewer. The page loads the stream only once and draws each frame to both halves of the screen (the ESP32 can only serve one stream at a time), so each lens sees one copy and it looks like a single normal view.
+&emsp;<b>4. The camera.</b> An ESP32 camera board behind the robot's eye connects to my home WiFi and hosts a web page with the live video. I connect my phone to the same network, open the board's IP address, and place the phone in the VR viewer. The page shows the stream in two side-by-side boxes, so each lens sees one copy and it looks like a single normal view.
+
+<p align="center">
+  <img src="images/robot-off.jpg" alt="Close-up of the robot's eye: the camera inside the LED ring, with the buzzer below" width="40%">
+</p>
 
 <h2><em>🔌 Hardware 🔌</em></h2>
 
